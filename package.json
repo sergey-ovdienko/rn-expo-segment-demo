@@ -10,6 +10,9 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.3",
+    "@segment/analytics-react-native": "^2.1.12",
+    "@segment/sovran-react-native": "^0.2.6",
     "expo": "^44.0.6",
     "react": "17.0.2",
     "react-native": "0.68.1"

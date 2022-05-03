@@ -6,6 +6,8 @@
 
 #import <React/RCTAppSetupUtils.h>
 
+@import segment_analytics_react_native;
+
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
 #import <React/RCTCxxBridgeDelegate.h>
@@ -26,6 +28,14 @@
 #endif
 
 @implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application
+            openURL: (NSURL *)url
+            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+  
+  [AnalyticsReactNative trackDeepLink:url withOptions:options];
+  return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
